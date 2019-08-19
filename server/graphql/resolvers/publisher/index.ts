@@ -3,7 +3,7 @@ import { publishersResolver } from './publishers'
 
 import { updatePublisher } from './update-publisher'
 import { createPublisher } from './create-publisher'
-import { deletePublisher } from './delete-publisher'
+import { deletePublisher, deletePublishers } from './delete-publisher'
 
 export const Query = {
   ...publishersResolver,
@@ -13,5 +13,6 @@ export const Query = {
 export const Mutation = {
   ...updatePublisher,
   ...createPublisher,
-  ...deletePublisher
+  ...deletePublisher,
+  ...deletePublishers
 }
