@@ -8,3 +8,11 @@ export const deletePublisher = {
     return await repository.delete(id)
   }
 }
+
+export const deletePublishers = {
+  async deletePublishers(_, { ids = [] }) {
+    const repository = getRepository(Publisher)
+
+    return await repository.delete(ids)
+  }
+}
