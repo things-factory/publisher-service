@@ -5,7 +5,7 @@ import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedCol
 @Entity('publishers')
 @Index('ix_publisher_0', (publisher: Publisher) => [publisher.domain, publisher.name], { unique: true })
 @Index('ix_publisher_1', (publisher: Publisher) => [publisher.domain, publisher.status])
-@Index('ix_publisher_2', (publisher: Publisher) => [publisher.domain, publisher.path])
+@Index('ix_publisher_2', (publisher: Publisher) => [publisher.domain, publisher.apiUrl])
 export class Publisher {
   @PrimaryGeneratedColumn('uuid')
   id: string
