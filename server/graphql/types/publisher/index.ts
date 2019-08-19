@@ -18,6 +18,10 @@ export const Mutation = /* GraphQL */ `
     id: String!
   ): Publisher
 
+  deletePublishers (
+    ids: [String]!
+  ): Publisher
+
 `
 
 export const Query = /* GraphQL */ `
