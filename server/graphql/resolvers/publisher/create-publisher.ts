@@ -12,6 +12,7 @@ export const createPublisher = {
 
     return await repository.save({
       ...newPublisher,
+      domain: context.domain,
       creator: context.state.user,
       updater: context.state.user
     })

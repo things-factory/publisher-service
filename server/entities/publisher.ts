@@ -10,7 +10,9 @@ export class Publisher {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
-  @ManyToOne(type => Domain)
+  @ManyToOne(type => Domain, {
+    eager: true
+  })
   domain: Domain
 
   @Column({
@@ -47,12 +49,14 @@ export class Publisher {
   status: number
 
   @ManyToOne(type => User, {
-    nullable: true
+    nullable: true,
+    eager: true
   })
   creator: User
 
   @ManyToOne(type => User, {
-    nullable: true
+    nullable: true,
+    eager: true
   })
   updater: User
 

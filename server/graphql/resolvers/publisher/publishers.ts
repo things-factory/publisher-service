@@ -1,12 +1,15 @@
+import { convertListParams, ListParam } from '@things-factory/shell'
 import { getRepository } from 'typeorm'
 import { Publisher } from '../../../entities'
-import { ListParam, buildQuery } from '@things-factory/shell'
 
 export const publishersResolver = {
   async publishers(_: any, params: ListParam, context: any) {
-    const queryBuilder = getRepository(Publisher).createQueryBuilder()
-    buildQuery(queryBuilder, params)
-    const [items, total] = await queryBuilder.getManyAndCount()
+    var publisherRepo = getRepository(Publisher)
+    var findOptions = convertListParams(params)
+
+    const [items, total] = await publisherRepo.findAndCount({
+      ...findOptions
+    })
 
     return { items, total }
   }
