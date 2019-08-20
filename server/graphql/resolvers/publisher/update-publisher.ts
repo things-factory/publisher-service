@@ -2,7 +2,7 @@ import { getRepository } from 'typeorm'
 import { Publisher } from '../../../entities'
 
 export const updatePublisher = {
-  async updatePublisher(_, { id, patch }) {
+  async updatePublisher(_, { id, patch }, context) {
     const repository = getRepository(Publisher)
 
     const publisher = await repository.findOne({ id })
@@ -16,7 +16,8 @@ export const updatePublisher = {
 
     return await repository.save({
       ...publisher,
-      ...patch
+      ...patch,
+      updater: context.state.user
     })
   }
 }

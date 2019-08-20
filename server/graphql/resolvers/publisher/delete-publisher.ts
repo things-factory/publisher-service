@@ -2,7 +2,7 @@ import { getRepository } from 'typeorm'
 import { Publisher } from '../../../entities'
 
 export const deletePublisher = {
-  async deletePublisher(_, { id }) {
+  async deletePublisher(_, { id }, context) {
     const repository = getRepository(Publisher)
 
     return await repository.delete(id)
