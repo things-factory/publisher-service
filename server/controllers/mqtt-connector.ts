@@ -1,11 +1,10 @@
+import { path as appRootPath } from 'app-root-path'
 import mqtt, { MqttClient } from 'mqtt'
 import path from 'path'
-import { path as appRootPath } from 'app-root-path'
 import { publishersResolver } from '../graphql/resolvers/publisher/publishers'
 import { startPublisherJob } from './start-publisher-job'
-import { Context } from 'apollo-server-core'
 
-var mqttConfig = require(path.resolve(appRootPath, 'mqttconfig'))
+var mqttConfig
 try {
   mqttConfig = require(path.resolve(appRootPath, 'mqttconfig'))
 } catch (e) {
