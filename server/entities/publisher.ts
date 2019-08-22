@@ -37,6 +37,11 @@ export class Publisher {
   apiUrl: string
 
   @Column({
+    nullable: true
+  })
+  timezone: string
+
+  @Column({
     type: 'int',
     nullable: true
   })
