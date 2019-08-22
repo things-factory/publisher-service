@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/publisher-service",
-  "version": "0.0.1-beta.12",
+  "version": "0.0.1-beta.13",
   "main": "dist-server/index.js",
   "things-factory": true,
   "license": "MIT",
