@@ -5,7 +5,10 @@ export async function stopPublisher(id, context) {
   if (!globalObject.jobs) globalObject.jobs = {}
 
   var job = globalObject.jobs[id]
-  if (job) job.stop()
+  if (job) {
+    job.stop()
+    delete globalObject.jobs[id]
+  }
 
   updatePublisher.updatePublisher(
     null,

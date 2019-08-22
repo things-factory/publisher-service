@@ -1,15 +1,7 @@
+import { MqttConnector } from './controllers/mqtt-connector'
 import { publishers } from './controllers/publishers'
 import { startPublisher } from './controllers/start-publisher'
 import { stopPublisher } from './controllers/stop-publisher'
-import path from 'path'
-import { path as appRootPath } from 'app-root-path'
-
-// var mqttConfig = require(path.resolve(appRootPath, 'mqttconfig'))
-// try {
-//   mqttConfig = require(path.resolve(appRootPath, 'mqttconfig'))
-// } catch (e) {
-//   mqttConfig = require('@things-factory/publisher-service/mqttconfig')
-// }
 
 process.on('bootstrap-module-history-fallback' as any, (app, fallbackOption) => {
   fallbackOption.whiteList.push('/publishers', '/start-publisher', '/stop-publisher')
@@ -37,4 +29,6 @@ process.on('bootstrap-module-route' as any, (app, routes) => {
       ...(await stopPublisher(id, context))
     }
   })
+
+  MqttConnector.initMqtt()
 })

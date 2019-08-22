@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@things-factory/board-app": "*",
-    "@things-factory/publisher-base": "*"
+    "@things-factory/publisher-base": "*",
+    "@things-factory/publisher-ui": "*"
   }
 }
