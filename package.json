@@ -31,8 +31,8 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@things-factory/board-app": "*",
-    "@things-factory/publisher-base": "*",
-    "@things-factory/publisher-ui": "*"
+    "@things-factory/board-app": "^1.0.0-alpha.1",
+    "@things-factory/publisher-base": "^1.0.0-alpha.1",
+    "@things-factory/publisher-ui": "^1.0.0-alpha.1"
   }
 }
