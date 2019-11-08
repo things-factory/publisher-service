@@ -4,7 +4,9 @@ import { startPublisher } from './controllers/start-publisher'
 import { stopPublisher } from './controllers/stop-publisher'
 
 process.on('bootstrap-module-history-fallback' as any, (app, fallbackOption) => {
-  fallbackOption.whiteList.push('/publishers', '/start-publisher', '/stop-publisher')
+  fallbackOption.whiteList.push(
+    `^\/(${['publishers', 'start-publisher', 'stop-publisher']})($|[/?#])`
+  )
 })
 
 process.on('bootstrap-module-route' as any, (app, routes) => {
