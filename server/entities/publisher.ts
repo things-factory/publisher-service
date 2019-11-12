@@ -48,7 +48,7 @@ export class Publisher {
   repeatCount: number
 
   @Column({
-    type: 'tinyint',
+    type: 'int2',
     nullable: true
   })
   status: number
