@@ -26,13 +26,12 @@
   },
   "dependencies": {
     "@things-factory/auth-base": "^1.0.0-alpha.1",
+    "@things-factory/publisher-service": "^1.0.0-alpha.1",
     "@things-factory/shell": "^1.0.0-alpha.1",
     "cron": "^1.7.1",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@things-factory/board-app": "^1.0.0-alpha.1",
-    "@things-factory/publisher-base": "^1.0.0-alpha.1",
-    "@things-factory/publisher-ui": "^1.0.0-alpha.1"
+    "@things-factory/board-app": "^1.0.0-alpha.1"
   }
 }
