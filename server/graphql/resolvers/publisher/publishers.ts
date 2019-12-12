@@ -4,11 +4,10 @@ import { Publisher } from '../../../entities'
 
 export const publishersResolver = {
   async publishers(_: any, params: ListParam, context: any) {
-    var publisherRepo = getRepository(Publisher)
-    var findOptions = convertListParams(params)
-
-    const [items, total] = await publisherRepo.findAndCount({
-      ...findOptions
+    var convertedParams = convertListParams(params, context.state.domain.id)
+    const [items, total] = await getRepository(Publisher).findAndCount({
+      ...convertedParams,
+      relations: ['domain', 'creator', 'updater']
     })
 
     return { items, total }
