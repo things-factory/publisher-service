@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/publisher-service",
-  "version": "1.0.0-alpha.4",
+  "version": "2.0.0",
   "main": "dist-server/index.js",
   "things-factory": true,
   "license": "MIT",
@@ -25,12 +25,12 @@
     "migration:revert": "node ./node_modules/typeorm/cli.js migration:revert"
   },
   "dependencies": {
-    "@things-factory/auth-base": "^1.0.0-alpha.1",
-    "@things-factory/shell": "^1.0.0-alpha.1",
+    "@things-factory/auth-base": "^2.0.0",
+    "@things-factory/shell": "^2.0.0",
     "cron": "^1.7.1",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@things-factory/board-app": "^1.0.0-alpha.1"
+    "@things-factory/board-app": "^2.0.0"
   }
 }
