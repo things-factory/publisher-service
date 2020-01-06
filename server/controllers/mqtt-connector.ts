@@ -8,7 +8,7 @@ var mqttConfig
 try {
   mqttConfig = require(path.resolve(appRootPath, 'mqttconfig'))
 } catch (e) {
-  mqttConfig = require('@things-factory/publisher-service/mqttconfig')
+  mqttConfig = require('../../mqttconfig')
 }
 
 export class MqttConnector {

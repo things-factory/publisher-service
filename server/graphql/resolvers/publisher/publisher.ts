@@ -3,8 +3,8 @@ import { Publisher } from '../../../entities'
 
 export const publisherResolver = {
   async publisher(_, { id }, context, info) {
-    const repository = getRepository(Publisher)
-
-    return await repository.findOne({ id })
+    return await getRepository(Publisher).findOne({
+      where: { domain: context.state.domain, id, relations: ['domain', 'creator', 'updater'] }
+    })
   }
 }
