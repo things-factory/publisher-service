@@ -26,7 +26,6 @@
   },
   "dependencies": {
     "@things-factory/auth-base": "^2.0.0",
-    "@things-factory/shell": "^2.0.0",
     "cron": "^1.7.1",
     "node-fetch": "^2.6.0"
   },
